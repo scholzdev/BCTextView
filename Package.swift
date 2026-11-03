@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "BCTextView",
-    platforms: [.macOS(.v13)],
+    platforms: [.macOS("27.0")],
     products: [
         // A Fast, Efficient text view for code.
         .library(

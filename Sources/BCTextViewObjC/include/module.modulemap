@@ -1,0 +1,3 @@
+module BCTextViewObjC {
+    header "CGContextHidden.h"
+}

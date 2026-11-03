@@ -4,13 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "CodeEditTextView",
+    name: "BCTextView",
     platforms: [.macOS(.v13)],
     products: [
         // A Fast, Efficient text view for code.
         .library(
-            name: "CodeEditTextView",
-            targets: ["CodeEditTextView"]
+            name: "BCTextView",
+            targets: ["BCTextView"]
         ),
     ],
     dependencies: [
@@ -33,11 +33,11 @@ let package = Package(
     targets: [
         // The main text view target.
         .target(
-            name: "CodeEditTextView",
+            name: "BCTextView",
             dependencies: [
                 "TextStory",
                 .product(name: "Collections", package: "swift-collections"),
-                "CodeEditTextViewObjC"
+                "BCTextViewObjC"
             ],
             plugins: [
                 .plugin(name: "SwiftLint", package: "SwiftLintPlugin")
@@ -46,15 +46,15 @@ let package = Package(
 
         // ObjC addons
         .target(
-            name: "CodeEditTextViewObjC",
+            name: "BCTextViewObjC",
             publicHeadersPath: "include"
         ),
 
         // Tests for the text view
         .testTarget(
-            name: "CodeEditTextViewTests",
+            name: "BCTextViewTests",
             dependencies: [
-                "CodeEditTextView"
+                "BCTextView"
             ],
             plugins: [
                 .plugin(name: "SwiftLint", package: "SwiftLintPlugin")
